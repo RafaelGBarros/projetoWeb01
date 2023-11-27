@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 450px;
+    height: 450px;
+    border-radius: 30px;
+}
+#spellName{
+    padding: 3px;
+    border: none;
+    border-bottom: solid 1px;
+    border-radius: 3px;
+}
+button{
+    font-style: italic;
+    background-color: rgb(223, 223, 223);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding: 3px;
+}
+
+
+#result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#title{
+    margin-top: 5%;
+    font-style: italic;
+    font-size: large;
+    border-bottom: solid  grey;
+    width: 80%;
+    text-align: center;
+}
+
+#classes{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#tagClass{
+    color: rgb(114, 114, 233);
+}
+
+#desc{
+    text-align: center;
+}
+
+
+
+
+#spellCard{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
