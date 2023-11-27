@@ -1,3 +1,7 @@
+const getSpellByClass = (event) => {
+    getSpell(event.target.value);
+}
+
 const getSpell = async (spellName) =>{
     //const spellName = document.querySelector('#spellName')
 
@@ -14,12 +18,12 @@ const getSpell = async (spellName) =>{
     })
     
 
-    console.log(spellName.value)//teste de entrada
+    console.log(spellName)//teste de entrada
 
     if(response.ok){
         const data = await response.json()
         console.log(data)
-            
+        
         divTitle.innerHTML = ''
         divClasses.innerHTML = ''
         divDesc.innerHTML = ''
@@ -43,13 +47,13 @@ const getSpell = async (spellName) =>{
 
     } else {
         if(response.status === 404){
-            divResult.innerHTML = `
+            divResult.innerHTML = divResult.innerHTML + `
             <p>Parece que ainda nao deciframaos esta magia!</p>
             <button class="cleanAll" onclick="backAll()">Voltar ao inicio</button>
             `
             
         } else {
-            divResult.innerHTML = '<p>Erro na requisição...</p>'
+            divResult.innerHTML += '<p>Erro na requisição...</p>'
         }
     } 
 }
@@ -91,9 +95,10 @@ const getClassInfo = async (classIndex) =>{
         }
 
         data.results.map((spell)=>{
-            spellsOfClass += spell.name
+            spellsOfClass += `<option value="${spell.index}">${spell.index}</option>`
 
         })
+
         divTitle.innerHTML = classIndex
 
         console.log(spellsOfClass)
@@ -101,19 +106,12 @@ const getClassInfo = async (classIndex) =>{
 
         divDesc.innerHTML = `
         
-        <label for="spellList">Escolha uma lista de ${classIndex}</label>
-        <select id="spellList">
-        ${
-            spellsOfClass.map((spell)=>{
-                `<option> ${spell.index} </option>`
-
-            })
-
-        }
-        
+        <label for="spellList">Escolha uma magia da lista de ${classIndex}<br><br></label>
+        <select id="spellList" onchange="getSpellByClass(event)">
+        ${spellsOfClass}
         </select>
+        <br><br><br><br>
         `
-
         divNav.innerHTML = `<button class="cleanAll" onclick="backAll()">Voltar ao inicio</button>`
 
     } else {
@@ -129,28 +127,7 @@ const getClassInfo = async (classIndex) =>{
     } 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const backAll = () => {
     location.reload()
 }
+
