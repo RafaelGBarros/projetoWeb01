@@ -8,25 +8,29 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <div id="bg" style="background-image: url('./img/backgroundWrapper.jpg');">
 
-    <div id="wrapper">
-        <h1 style="font-style: italic; margin-bottom: 50px;">Gregorio's Grimoire</h1>
-        <h4 id="incialText" style="font-weight: normal; margin-bottom: 10px;">Qual magia Devemos procurar?</h4>
-
-        <div id="requestArea">
-            <input type="text" id="spellName">
-            <button .class="cleanAll" onclick="getSpell(document.getElementById('spellName').value)">Procurar!</button>
+        <div id="wrapper">
+            <h1 style="font-style: italic; margin-bottom: 50px; font-size: 50px;">Gregorio's Grimoire</h1>
+            <h4 id="incialText" style="font-weight: normal; margin-bottom: 10px;">Qual magia Devemos procurar?</h4>
+    
+            <div id="requestArea">
+                <input type="text" id="spellName">
+                <button .class="cleanAll" onclick="getSpell(document.getElementById('spellName').value)">Procurar!</button>
+            </div>
+    
+            <div id="result">
+    
+                <div id="title"></div>
+                <div id="classes"></div>
+                <div id="desc"></div>
+                <div id="nav"></div>
+            </div>
+            
         </div>
 
-        <div id="result">
-
-            <div id="title"></div>
-            <div id="classes"></div>
-            <div id="desc"></div>
-            <div id="nav"></div>
-        </div>
-        
     </div>
+    
     
 </body>
 </html>

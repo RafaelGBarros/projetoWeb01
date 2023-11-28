@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Ephesis', cursive;
 }
 body{
-    
+    background-color: #f6f6f6;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -16,10 +19,12 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid black;
-    width: 450px;
-    height: 450px;
+    border: none;
+    width: 40vw;
+    height: 80vh;
     border-radius: 30px;
+    opacity: 1;
+    animation: fadeOut 1s ease-in-out;
 }
 #spellName{
     padding: 3px;
@@ -60,11 +65,13 @@ button{
     align-items: center;
 }
 #tagClass{
-    color: rgb(114, 114, 233);
+    color: rgb(255, 255, 255);
+    font-size: 25px;
 }
 
 #desc{
     text-align: center;
+    font-size: 25px;
 }
 
 
@@ -77,3 +84,13 @@ button{
 
 
 
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    100% {
+      opacity: 0;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+    }
+  }

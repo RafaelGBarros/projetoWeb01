@@ -18,7 +18,7 @@ const getSpell = async (spellName) =>{
     })
     
 
-    console.log(spellName)//teste de entrada
+    console.log(spellName)
 
     if(response.ok){
         const data = await response.json()
